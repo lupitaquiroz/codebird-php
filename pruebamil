@@ -1,0 +1,11 @@
+// require codebird
+require_once('/path/to/codebird_php_v2.4.1/codebird.php');
+ 
+\Codebird\Codebird::setConsumerKey("your_ConsumerKey", "your_ConsumerSecret");
+$cb = \Codebird\Codebird::getInstance();
+$cb->setToken("your_AccessToken", "your_AccessTokenSecret");
+ 
+$params = array(
+  'status' => 'Auto Post on Twitter with PHP http://goo.gl/OZHaQD #php #twitter'
+);
+$reply = $cb->statuses_update($params);
